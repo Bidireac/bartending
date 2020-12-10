@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Ruhl";
+  src: url("/fonts/FrankRuhlLibre-Regular.ttf");
+}
+@font-face {
+  font-family: "Vibes";
+  src: url("/fonts/GreatVibes-Regular.ttf");
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: "Vibes", sans-serif;
+  background: radial-gradient(
+      rgba(230, 100, 101, 0.5),
+      rgba(145, 152, 229, 0.5),
+      transparent
+    ),
+    url(/img/backgroundFrame.svg);
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+section {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-align: center;
+  color: black;
+}
+
+h1 {
+  margin: 12rem;
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 4rem;
+  padding-bottom: 2rem;
+}
+
+h3 {
+  font-family: "Vibes", sans-serif;
+  font-weight: 200;
+  font-size: 7rem;
+  padding: 1rem;
+}
+
+h4 {
+  font-size: 3.5rem;
+  font-weight: 200;
+}
+
+.box {
+  width: 80%;
+  border-radius: 4rem;
+  padding: 3rem;
+  margin: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 1);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 3rem;
+  object-fit: cover;
+}
+
+#drinks {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  justify-items: center;
+  align-items: center;
+}
+
+/* Drink Ingredients Style */
+#display {
+  font-family: "Ruhl", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "box1 box2"
+    "box3 box2";
+  padding: 2rem;
+}
+
+.originalDrink {
+  height: 90%;
+  grid-area: box1;
+  background: radial-gradient(rgba(0, 0, 0, 0.6), transparent);
+  box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 1);
+  border-radius: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 20%;
+}
+
+.originalDrink img {
+  height: 80%;
+  width: 80%;
+}
+
+.ingredientsList {
+  height: 100%;
+  width: 100%;
+  grid-area: box2;
+  border-radius: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  margin-left: 15%;
+}
+
+.ingredients {
+  display: flex;
+  align-items: center;
+}
+
+.ingredients span {
+  font-weight: 900;
+  font-size: 4rem;
+  border-bottom: 0.2rem dashed black;
+}
+
+.ingredients img {
+  width: 25rem;
+  height: 25rem;
+  margin: 4rem;
+}
+
+.instructions {
+  height: 100%;
+  width: 100%;
+  grid-area: box3;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), transparent);
+  box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 1);
+  border-radius: 4rem;
+  margin: 5%;
+  padding: 5rem;
+}
+
+.instructions h3,
+.instructions h4 {
+  color: cornsilk;
+}
+
+ul .measurements {
+  font-size: 4rem;
+}
+
+ul .measurements li {
+  padding: 1rem;
+  border-bottom: 0.1rem dashed black;
+  padding-left: 3rem;
+  font-weight: 900;
+}
+
+.loader {
+  opacity: 0;
+  display: flex;
+  position: fixed;
+  bottom: 1rem;
+  transition: opacity 0.3s ease-in;
+}
+
+.loader.show {
+  opacity: 1;
+}
+
+.circle {
+  background-color: black;
+  padding-left: 2rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  margin: 0.5rem;
+  animation: bounce 0.5s ease-in infinite;
+}
+
+.circle:nth-of-type(2) {
+  animation-delay: 0.1s;
+}
+
+.circle:nth-of-type(3) {
+  animation-delay: 0.2s;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
