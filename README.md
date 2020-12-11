@@ -1,5 +1,5 @@
 # Be your own bartender
-> A webpage designed to explore your inner bartender skills, where you can get inspired to try things at the comfort of your home.
+> A web page designed to explore your inner bartender skills, where you can get inspired to try things at the comfort of your home.
 
 ![demo](/demo/searchByIngredient.gif)
 
