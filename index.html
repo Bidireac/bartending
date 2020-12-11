@@ -10,13 +10,33 @@
     <main>
       <section>
         <h1>Come, have a drink with us!</h1>
-        <div id="drinks"></div>
-        <div class="loader">
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
+        <div id="filters">
+          <div class="filter-container">
+            <input
+              type="text"
+              id="filter"
+              class="filter"
+              placeholder="Search by ingredient..."
+            />
+          </div>
+          <div class="filter-container">
+            <input
+              type="text"
+              id="filterName"
+              class="filter"
+              placeholder="Search by name..."
+            />
+          </div>
         </div>
+        <div id="drinks"></div>
+        <div id="txtDiv"></div>
+        <div id="searchDrinks"></div>
       </section>
+      <div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
     </main>
 
     <script src="script.js"></script>

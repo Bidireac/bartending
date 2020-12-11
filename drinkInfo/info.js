@@ -1,8 +1,9 @@
 const display = document.getElementById("display");
-const storageData = sessionStorage.getItem("viewedDrink");
-const retrievedData = JSON.parse(storageData);
-
-console.log(retrievedData);
+const storageViewed = sessionStorage.getItem("viewedDrink");
+const storageSearched = sessionStorage.getItem("searchedDrink");
+const retrievedView = JSON.parse(storageViewed);
+const retrievedSearch = JSON.parse(storageSearched);
+const storageData = retrievedView ? retrievedView : retrievedSearch;
 
 // Get the ingredients for display
 
@@ -10,18 +11,18 @@ function getIngredients() {
   let ingredients = [];
   let measurements = [];
   let iterator = 1;
-  for (let ing in retrievedData) {
+  for (let ing in storageData) {
     let ingredientIterator = "strIngredient" + iterator;
-    if (ing === ingredientIterator && retrievedData[ing] != null) {
-      ingredients.push(retrievedData[ing]);
+    if (ing === ingredientIterator && storageData[ing] != null) {
+      ingredients.push(storageData[ing]);
       iterator++;
     }
   }
   iterator = 1;
-  for (let ms in retrievedData) {
+  for (let ms in storageData) {
     let measurementIterator = "strMeasure" + iterator;
-    if (ms === measurementIterator && retrievedData[ms] != null) {
-      measurements.push(retrievedData[ms]);
+    if (ms === measurementIterator && storageData[ms] != null) {
+      measurements.push(storageData[ms]);
       iterator++;
     }
   }
@@ -36,8 +37,8 @@ function originalDrinkDisplay() {
   const origin = document.createElement("div");
   origin.classList.add("originalDrink");
   origin.innerHTML = `
-    <h3>${retrievedData.strDrink}</h3>
-    <img src="${retrievedData.strDrinkThumb}" alt=""> 
+    <h3>${storageData.strDrink}</h3>
+    <img src="${storageData.strDrinkThumb}" alt=""> 
   `;
   display.append(origin);
 }
@@ -49,7 +50,7 @@ function instructionsDisplay(measurements) {
   instruct.classList.add("instructions");
   instruct.innerHTML = `
     <h3>Instructions</h3>
-    <h4>${retrievedData.strInstructions}</h4>
+    <h4>${storageData.strInstructions}</h4>
     <h3>Measurements</h3>
   `;
   const msList = document.createElement("ul");
