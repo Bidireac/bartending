@@ -10,10 +10,7 @@
 * [Status](#status)
 
 ## General info
-The page loads with only 3 random beverages. If you scroll down, it will load more, and more, 
-until it runs out of cocktails recipes or the user gets bored of scrolling and stops for a drink.
-You can search for a specific cocktail, or you can try a broader approach, and search for an ingredient  
-and the page will enlist all the cocktails that contain that specific ingredient.
+The page loads with only 3 random beverages. If you scroll down, it will load more, and more, until it runs out of cocktails recipes or the user gets bored of scrolling and stops for a drink. You can search for a specific cocktail, or you can try a broader approach, and search for an ingredient and the page will enlist all the cocktails that contain that specific ingredient.
 	
 ## Technologies
 Project is created with:
